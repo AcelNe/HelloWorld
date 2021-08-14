@@ -46,6 +46,8 @@ public class CalendarMain{
 			year=sc.nextInt();
 			System.out.print("달을 입력하세요\nMonth>>");
 			month=sc.nextInt();
+			System.out.print("첫 요일을 입력하세요\n>>");
+			String nameOfWeek=sc.nextLine();
 			if(month==-1){
 				break;
 			}
