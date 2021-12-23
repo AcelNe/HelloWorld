@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans 
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	 http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+	 http://www.springframework.org/schema/context
+	 http://www.springframework.org/schema/context/spring-context-4.3.xsd
+	 http://www.springframework.org/schema/aop
+	 http://www.springframework.org/schema/aop/spring-aop-4.3.xsd"
+	 >
+	 
+	 <aop:config>
+	 	<aop:aspect ref="adviceExecution">
+	 		<aop:pointcut 
+	 		expression="execution(String *..*(..))" 
+	 		id="str"/>	 		
+	 		<aop:around method="retStr" pointcut-ref="str"/>	 		
+	 		<aop:around method="retBool" pointcut="execution(boolean *..*(..))" />
+	 		
+	 		<aop:around method="argIntplus" pointcut="execution(* *.*(int,**))" />
+	 		<aop:around method="argZero" pointcut="execution(* *.*())" />
+	 		
+	 		<aop:around method="methStartM" pointcut="execution(* *.m*(..))" />
+	 		<aop:around method="clalssStartF" pointcut="execution(* *..F*.*(..))" />
+	 		<aop:around method="pacStart_n" pointcut="execution(* *..n*.*.*(..))" />
+	 	</aop:aspect>
+	 	
+	 	
+	 </aop:config>
+	<context:component-scan base-package="aop_p.model"/>
+	<context:annotation-config/>
+	
+	
+</beans>

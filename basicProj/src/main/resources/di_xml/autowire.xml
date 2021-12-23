@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans 
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	 http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+	
+	<bean name="adult" class="di_P.model.Phone" p:name="어른폰" p:fc-ref="fc" p:bc-ref="cam2" p:dd-ref="dd"/>
+	
+	<bean name="gal_1" class="di_P.model.Phone" p:name="은하수" autowire="byName"/>
+		
+	<bean name="gal_2" class="di_P.model.Phone" p:name="은하수2" autowire="byType"
+	p:fc-ref="cam2" p:bc-ref="cam2" p:dd-ref="dis1"/>
+	
+	<bean name="dis1" class="di_P.model.Display" p:size="480" p:cnt="1"/>
+	<bean name="dd" class="di_P.model.Display" p:size="540" p:cnt="2"/>
+	
+	<bean name="fc" class="di_P.model.Camera" p:type="일반" p:pixel="100"/>
+	<bean name="cam2" class="di_P.model.Camera" p:type="광학" p:pixel="200"/>
+	
+	
+	<bean name="mem1" class="di_P.model.Member" autowire="byType" />
+	
+	<bean class="di_P.model.Company" p:name="나베르" p:addr="경기 분당 정자동" />
+	
+	<!-- <bean class="di_P.model.Company" p:name="구그리" p:addr="실리콘밸리" /> -->
+	
+	<bean name="nn" class="java.lang.String">
+		<constructor-arg value="오병철" />
+	</bean>
+	
+	<bean name="ii" class="java.lang.Integer">
+		<constructor-arg value="123456" />
+	</bean>
+	
+	<bean name="drink1" class="di_P.model.Drink" autowire="constructor"/>
+	
+	<bean name="ach" class="di_P.model.Alcohol" p:name="보드카" p:proof="40"/>
+	<bean name="ach2" class="di_P.model.Alcohol" p:name="처음처럼" p:proof="16"/>
+	<bean name="aa" class="di_P.model.Alcohol" p:name="진리" p:proof="18"/>
+	
+</beans>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans 
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	 http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+	
+	<bean name="ss" class="di_P.model.Server" p:name="한성컴퓨터" autowire="byName"
+	p:bb-ref="bb1"/>
+	
+	<bean name="ss" class="di_P.model.DestTop" p:name="삼보드림시스61" autowire="byName"
+	p:mm-ref="mm1"/>
+	
+	<bean name="nn" class="di_P.model.Notebook" p:name="노트북회사" autowire="byName"/>
+	
+	<bean name="ㅅㅅ" class="di_P.model.Tablet" p:name="삼성전자" autowire="byType"/>
+	
+</beans>

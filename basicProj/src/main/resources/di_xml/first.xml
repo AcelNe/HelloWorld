@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Beans 가져오는 방법 -->
+<!-- xmlns = name space -->
+<!-- xmlns 입력하고 직접 브라우저에서 가보는게 좋다. -->
+<!-- name space = http://www.springframework.org/schema/beans  -->
+<!-- location = http://www.springframework.org/schema/beans/spring-beans-4.3.xsd -->
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	 http://www.springframework.org/schema/beans/spring-beans-4.3.xsd"
+>
+
+<!-- Bean 등록해서 쓰기 (위가 있어야 <bean> 태그를 쓸 수 있다) -->
+<!-- class의 주소는 풀네임으로 써야함 : 어떤 클래스에서 쓸거야 -->
+<bean id="mm2" class="di_P.model.Member">
+	<property name="name">
+		<value>중성민</value>
+	</property>
+	<property name="age" value="25"/>
+	<!-- 2. <property name="marriage" value="true"/> getter setter 없으면 오류 -->
+</bean>
+
+<!-- 3. 같은 ID의 bean 설정 불가 
+<bean id="mm2" class="di_P.model.Member">
+	<property name="name">
+		<value>상성민</value>
+	</property>
+	<property name="age" value="32"/>
+</bean> -->
+
+<!-- p 태그 추가됬네 그래서 코드가 간편해졌네 (property 추가 간편화) -->
+<bean id="mm3" class="di_P.model.Member" p:name = "상성민" p:age="37"/>
+<bean id="st4" class="di_P.model.Stud" p:name = "오병철" p:age="52" p:kind="특기생"/>
+<bean id="bb5" class="di_P.model.Baby" p:name = "사병철" p:age="3"  p:toy="아기상어"/>
+
+
+</beans>
