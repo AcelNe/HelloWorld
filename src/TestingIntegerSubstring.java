@@ -18,6 +18,7 @@ public class TestingIntegerSubstring {
 		int try1=Integer.parseInt(test.substring(5));
 		System.out.println("시도 Integer+substring 결과값: "+try1);				
 
+		//안녕안녕
 	}
 
 }
