@@ -16,7 +16,8 @@ public class TestingIntegerSubstring {
 		System.out.println("2번 변환값: "+num22);
 		
 		int try1=Integer.parseInt(test.substring(5));
-		System.out.println("시도 Integer+substring 결과값: "+try1);				
+		System.out.println("시도 Integer+substring 결과값: "+try1);	
+		System.out.println("첫번째 수정 시도");
 
 	}
 
