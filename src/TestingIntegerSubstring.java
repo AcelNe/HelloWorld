@@ -19,7 +19,6 @@ public class TestingIntegerSubstring {
 		System.out.println("시도 Integer+substring 결과값: "+try1);	
 		System.out.println("첫번째 수정 시도");
 
-		//안녕안녕
 	}
 
 }
